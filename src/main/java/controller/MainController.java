@@ -42,14 +42,13 @@ public class MainController {
         } else if ("exit".equals(text)) {
             bot.sendMsg("Closed", "290631155");
             System.exit(0);
-        } else if ("statistics".equals(text)) {
+        } else if ("statistics".equalsIgnoreCase(text)) {
             sendStats(bot, chatId, stats);
         }
 
     }
 
     public static void sendPoll(Bot bot, String chatId, int task) {
-
         if (task != 0) {
             bot.sendMsg(Messages.tareas[task], chatId);
         }

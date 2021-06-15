@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class Bot extends BotTelegram {
 
     public void sendMsg(String text, String chatId) {
-        //
+
         SendMessage sendMessage = new SendMessage();
         sendMessage.enableMarkdown(true);
         sendMessage.setChatId(chatId);
@@ -38,7 +38,7 @@ public class Bot extends BotTelegram {
 
         // create buttons
         List<KeyboardRow> keyboardRowLlist = new ArrayList<KeyboardRow>();
-        KeyboardRow keyboardFirstRow = new KeyboardRow();  // firths line of keyboard
+        KeyboardRow keyboardFirstRow = new KeyboardRow();  // first line of keyboard
         KeyboardRow keyboardSecondRow = new KeyboardRow();  // second
 
         //name buttons

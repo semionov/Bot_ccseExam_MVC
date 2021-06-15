@@ -7,19 +7,6 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 
 public class BotTelegram extends TelegramLongPollingBot {
 
-    /*
-    private String message_text;
-    private long chat_id;
-
-    // Getters
-    public String getMessage_text() {
-        return message_text;
-    }
-    public long getChat_id() {
-        return chat_id;
-    }
-     */
-
     @Override
     public void onUpdateReceived(Update update) {
         Message message = update.getMessage();

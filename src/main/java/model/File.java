@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 
 public class File {
 
-    //list of String[] arrays that presents lines of elements of the question for quiz
+    //list of String[] arrays that are lines of elements for each question of quiz
     private final List<String[]> listOfQuizLines = new ArrayList<String[]>();
 
     public File(String filepath) throws IOException {
@@ -22,16 +22,6 @@ public class File {
     public int getArrayLength() {
         return listOfQuizLines.size();
     }
-
-    /*
-    private String[] getQuizLine(int index) {
-        return listOfQuizLines.get(index);
-    }
-
-    public int get() {
-        return listOfQuizLines.size();
-    }
-     */
 
     public void fillUpMapFromFile(String filepath) throws IOException {
         int index = 0;
