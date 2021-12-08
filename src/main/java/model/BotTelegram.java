@@ -40,13 +40,13 @@ public class BotTelegram extends TelegramLongPollingBot {
     public String getBotUsername() {
         // Return bot username
         // If bot username is @MyAmazingBot, it must return 'MyAmazingBot'
-        return "ccse_test_bot";
+        return "---";
     }
 
     @Override
     public String getBotToken() {
         // Return bot token from BotFather
-        return "1817038111:AAGEHr-WbukE1gP7pQrMU-WtcW0LFxA1gxk";
+        return "---";
     }
 
 
