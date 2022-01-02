@@ -15,6 +15,7 @@ public class Main {
         FilesContainer.load();
 
         //Launch timer that makes bot send certain quantity of quiz every 24 hours
-        BotContainer.getBot().sendPollWithTimer("290631155", FilesContainer.getFiles().get(0), 6);
+        //@CCSE_exam - channel ,  290631155 - mine
+        BotContainer.getBot().sendPollWithTimer("@CCSE_exam", FilesContainer.getFiles().get(0), 3);
     }
 }

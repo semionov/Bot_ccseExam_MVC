@@ -90,8 +90,7 @@ public class Bot extends BotTelegram {
     }
 
 
-    public void sendPollWithTimer(String chatId, File tarea, int quantity) {
-        final String chatID = chatId;
+    public void sendPollWithTimer(final String chatId, final File tarea, final int quantity) {
         Timer timer = new Timer();
         TimerTask t = new TimerTask() {
             @Override
@@ -99,7 +98,7 @@ public class Bot extends BotTelegram {
                 try {
                     for (int i = 0; i < quantity; i++) {
                         TimeUnit.SECONDS.sleep(5);
-                        sendPoll(chatID, tarea);
+                        sendPoll(chatId, tarea);
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
