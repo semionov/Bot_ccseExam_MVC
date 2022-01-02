@@ -7,6 +7,19 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 
 public class BotTelegram extends TelegramLongPollingBot {
 
+    /*
+    private String message_text;
+    private long chat_id;
+
+    // Getters
+    public String getMessage_text() {
+        return message_text;
+    }
+    public long getChat_id() {
+        return chat_id;
+    }
+     */
+
     @Override
     public void onUpdateReceived(Update update) {
         Message message = update.getMessage();
@@ -27,23 +40,14 @@ public class BotTelegram extends TelegramLongPollingBot {
     public String getBotUsername() {
         // Return bot username
         // If bot username is @MyAmazingBot, it must return 'MyAmazingBot'
-        return "CCSE_exam_bot";
+        return "ccse_test_bot";
     }
 
     @Override
     public String getBotToken() {
         // Return bot token from BotFather
-        return "1213851843:AAEYmoddKktWaYEd4ty4fiBjsyvoMJH8mW0";
+        return "1817038111:AAGEHr-WbukE1gP7pQrMU-WtcW0LFxA1gxk";
     }
 
-    /*
-    public String getBotUsername() {
-        return "CCSE_exam_bot";
-    }
 
-    public String getBotToken() {
-        return "1213851843:AAEYmoddKktWaYEd4ty4fiBjsyvoMJH8mW0";
-    }
-
- */
 }
