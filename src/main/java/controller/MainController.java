@@ -12,40 +12,52 @@ public class MainController {
         Bot bot = BotContainer.getBot();
         Stats stats = StatsContainer.getStatistics();
 
-        if ("/start".equals(text)) {
-            bot.sendMsg(Messages.greetings, chatId);
-        } else if ("/examen".equals(text) || "Examen".equals(text)) {
-            //sendMsg(message, "Whole exam");
-            sendPoll(bot, chatId, 0);
-            stats.plusExam();
-        } else if ("/tarea1".equals(text) || "1".equals(text)) {
-            sendPoll(bot, chatId, 1);
-            stats.plusTask();
-        } else if ("/tarea2".equals(text) || "2".equals(text)) {
-            sendPoll(bot, chatId, 2);
-            stats.plusTask();
-        } else if ("/tarea3".equals(text)  || "3".equals(text)) {
-            sendPoll(bot, chatId, 3);
-            stats.plusTask();
-        } else if ("/tarea4".equals(text)  || "4".equals(text)) {
-            sendPoll(bot, chatId, 4);
-            stats.plusTask();
-        } else if ("/tarea5".equals(text)  || "5".equals(text)) {
-            sendPoll(bot, chatId, 5);
-            stats.plusTask();
-        } else if ("/sobremi".equals(text)) {
-            bot.sendMsg(Messages.aboutMe, chatId);
-            stats.plusInfo();
-        } else if ("/manual".equals(text)) {
-            bot.sendDoc(chatId,
-                "https://examenes.cervantes.es/sites/default/files/manual_ccse_2021.pdf");
-        } else if ("exit".equals(text)) {
-            bot.sendMsg("Closed", "290631155");
-            System.exit(0);
-        } else if ("statistics".equalsIgnoreCase(text)) {
-            sendStats(bot, chatId, stats);
-        }
 
+        switch (text) {
+            case "/start":
+                bot.sendMsg(Messages.greetings, chatId);
+                break;
+            case "/examen":
+                sendPoll(bot, chatId, 0);
+                stats.plusExam();
+                break;
+            case "/tarea1":
+                sendPoll(bot, chatId, 1);
+                stats.plusTask();
+                break;
+            case "/tarea2":
+                sendPoll(bot, chatId, 2);
+                stats.plusTask();
+                break;
+            case "/tarea3":
+                sendPoll(bot, chatId, 3);
+                stats.plusTask();
+                break;
+            case "/tarea4":
+                sendPoll(bot, chatId, 4);
+                stats.plusTask();
+                break;
+            case "/tarea5":
+                sendPoll(bot, chatId, 5);
+                stats.plusTask();
+                break;
+            case "/sobremi":
+                bot.sendMsg(Messages.aboutMe, chatId);
+                stats.plusInfo();
+                break;
+            case "/manual":
+                bot.sendDoc(chatId, "https://examenes.cervantes.es/sites/default/files/Manual%20CCSE%202024_0.pdf");
+                break;
+            case "exit":
+                bot.sendMsg("Closed", "290631155");
+                System.exit(0);
+                break;
+            case "statistics":
+                bot.sendMsg(stats.getStatsMessage(), chatId);
+                break;
+            default:
+                break;
+        }
     }
 
     public static void sendPoll(Bot bot, String chatId, int task) {
@@ -59,9 +71,5 @@ public class MainController {
             e.printStackTrace();
         }
 
-    }
-
-    public static void sendStats(Bot bot, String chatId, Stats stats) {
-        bot.sendMsg(stats.getStatsMessage(), chatId);
     }
 }
