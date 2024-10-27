@@ -1,5 +1,6 @@
 package model;
 
+import config.AppConfig;
 import view.Messages;
 
 import java.io.*;
@@ -60,7 +61,7 @@ public class File {
 
         //print information about fullUp process to console and send me
         BotContainer.getBot().sendMsg(linesCounter + " lines uploaded to array\n" +
-            "Array size: " + listOfQuizLines.size(), "290631155");
+            "Array size: " + listOfQuizLines.size(), AppConfig.MY_CHAT_ID);
         System.out.println(linesCounter + " lines uploaded to array\n" +
             "Array size: " + listOfQuizLines.size());
         reader.close();

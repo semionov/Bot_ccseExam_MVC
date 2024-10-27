@@ -1,5 +1,6 @@
 package model;
 
+import config.AppConfig;
 import org.telegram.telegrambots.meta.api.methods.polls.SendPoll;
 import org.telegram.telegrambots.meta.api.methods.send.SendDocument;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -7,7 +8,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMar
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardButton;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-import utilities.Numbers;
+import utils.Numbers;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -19,11 +20,10 @@ public class Bot extends BotTelegram {
         SendMessage sendMessage = new SendMessage();
         sendMessage.enableMarkdown(true);
         sendMessage.setChatId(chatId);
-        //sendMessage.setReplyToMessageId(message.getMessageId());   just for replying to messages
         sendMessage.setText(text);
         try {
             setButtons(sendMessage);
-            execute(sendMessage.setText(text));  // (message.getText() + " " + text)
+            execute(sendMessage.setText(text));
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
@@ -102,7 +102,7 @@ public class Bot extends BotTelegram {
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
-                    sendMsg("error in timer", "290631155");
+                    sendMsg("error in timer", AppConfig.MY_CHAT_ID);
                 }
             }
         };

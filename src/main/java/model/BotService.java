@@ -1,5 +1,6 @@
 package model;
 
+import config.AppConfig;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
@@ -24,7 +25,7 @@ public class BotService {
             TelegramApiException e) {
             e.printStackTrace();
         }
-        bot.sendMsg("initialized", "290631155");
+        bot.sendMsg("initialized", AppConfig.MY_CHAT_ID);
         return bot;
     }
 }

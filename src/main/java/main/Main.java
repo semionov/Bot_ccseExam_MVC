@@ -1,5 +1,6 @@
 package main;
 
+import config.AppConfig;
 import model.*;
 import java.io.IOException;
 
@@ -16,6 +17,6 @@ public class Main {
 
         //Launch timer that makes bot send certain quantity of quiz every 24 hours
         //@CCSE_exam - channel ,  290631155 - mine
-        BotContainer.getBot().sendPollWithTimer("@CCSE_exam", FilesContainer.getFiles().get(0), 3);
+        BotContainer.getBot().sendPollWithTimer(AppConfig.CHAT_ID, FilesContainer.getFiles().get(0), 3);
     }
 }

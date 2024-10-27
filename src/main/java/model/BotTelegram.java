@@ -1,24 +1,12 @@
 package model;
 
+import config.AppConfig;
 import controller.MainController;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 
 public class BotTelegram extends TelegramLongPollingBot {
-
-    /*
-    private String message_text;
-    private long chat_id;
-
-    // Getters
-    public String getMessage_text() {
-        return message_text;
-    }
-    public long getChat_id() {
-        return chat_id;
-    }
-     */
 
     @Override
     public void onUpdateReceived(Update update) {
@@ -39,14 +27,13 @@ public class BotTelegram extends TelegramLongPollingBot {
     @Override
     public String getBotUsername() {
         // Return bot username
-        // If bot username is @MyAmazingBot, it must return 'MyAmazingBot'
-        return "ccse_test_bot";
+        return AppConfig.BOT_USER_NAME;
     }
 
     @Override
     public String getBotToken() {
         // Return bot token from BotFather
-        return "1817038111:AAGEHr-WbukE1gP7pQrMU-WtcW0LFxA1gxk";
+        return AppConfig.TELEGRAM_BOT_TOKEN;
     }
 
 

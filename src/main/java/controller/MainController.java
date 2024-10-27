@@ -2,6 +2,7 @@ package controller;
 
 import model.*;
 import view.Messages;
+import config.AppConfig;
 
 import java.io.IOException;
 
@@ -49,7 +50,7 @@ public class MainController {
                 bot.sendDoc(chatId, "https://examenes.cervantes.es/sites/default/files/Manual%20CCSE%202024_0.pdf");
                 break;
             case "exit":
-                bot.sendMsg("Closed", "290631155");
+                bot.sendMsg("Closed", AppConfig.MY_CHAT_ID);
                 System.exit(0);
                 break;
             case "statistics":
