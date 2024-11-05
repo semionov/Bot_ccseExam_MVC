@@ -1,0 +1,1 @@
+Telegram Bot written in Java. It sends everyday quizes to the channel. These quizes are about to prepare for the CCSE Spanish state cultural exam in order to obtain Spanish citizenship. Also it is able to respond to the private message and send particular quizes privately.
